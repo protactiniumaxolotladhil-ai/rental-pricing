@@ -1,0 +1,10 @@
+[project]
+name = "rental-pricing"
+version = "0.1.0"
+description = "Calculate rental costs per calendar day and manage rental orders."
+requires-python = ">=3.14"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
