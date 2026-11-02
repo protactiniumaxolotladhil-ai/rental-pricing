@@ -34,3 +34,20 @@ def test_add_item_to_order():
     order = create_order("C3", items)
     add_item(order, "Sleeping Bag")
     assert order["items"] == ["Sleeping Bag"]
+    
+    
+def test_rental_days_same_day():
+    assert rental_days(date(2026, 6, 1), date(2026, 6, 1)) == 1
+
+
+def test_rental_days_exactly_seven():
+    assert rental_days(date(2026, 5, 1), date(2026, 5, 7)) == 7
+    
+    
+    def test_two_orders_keep_own_items():
+        order_a = create_order("C4 ")
+        order_b = create_order("C5")
+        add_item(order_a, "Ladder")
+        add_item(order_b, "Drill")
+        assert order_a["items"] == ["Ladder"]
+        assert order_b["items"] == ["Drill"]
